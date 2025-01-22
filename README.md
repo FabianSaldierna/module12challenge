@@ -14,6 +14,7 @@ NOTE: on the Porfolio page, the deploy link for the "Weather Dashboard" project 
 
 You may need to install NPM packages:
   npm i
+  
   npm run build
 
 ## Usage
