@@ -1,7 +1,8 @@
+import Form from "../components/Form";
 export default function Contact() {
     return (
         <div>
-            <h2>Mi Contact</h2>
+            <h2>My Contact</h2>
             <p>
                 Nunc pharetra finibus est at efficitur. Praesent sed congue diam.
                 Integer gravida dui mauris, ut interdum nunc egestas sed. Aenean sed
@@ -10,6 +11,7 @@ export default function Contact() {
                 imperdiet. Praesent euismod mi justo, faucibus scelerisque risus cursus
                 in. Sed rhoncus mollis diam, sit amet facilisis lectus blandit at.
             </p>
+            <Form/>
         </div>
     );
 }
