@@ -1,9 +1,9 @@
 # module12challenge
 Solved code for the module 12 challenge
 
-## Video Link
+## Project Link
 
-https://drive.google.com/file/d/1MfdF15xpMyWNeTTIF8tcVvQCczovYqhO/view
+https://netlifychallenge12fsm.netlify.app/
 
 ## Description
 
