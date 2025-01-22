@@ -4,7 +4,9 @@ import validator from "validator";
 export default function Form() {
     const [name, setName] = useState('Enter your name');
     const [mail, setMail] = useState('Enter your email');
-const [text, setText] = useState('Enter some text');
+    const [text, setText] = useState('Enter some text');
+    const [alerta, setAlert] = useState('');
+
 
     const handleInputChange = (e) => {
         const { name, value } = e.target;
@@ -19,11 +21,20 @@ const [text, setText] = useState('Enter some text');
     const handleonBlur = (e) => {
         const { value } = e.target;
         if (!value) {
-            e.target.name == "users_name" && setName("Enter your name");
-            e.target.name == "users_text" && setText("Enter some text");
-            alert(`Please enter a value`);
+            if (e.target.name == "users_name") {
+                setName("Enter your name");
+                setAlert(`Please enter a name`);
+            }
+            if (e.target.name == "users_text") {
+                setText("Enter some text");    
+                setAlert(`Please enter some text`);
+            }
+            if (value) {
+                setAlert(``);
+            }
         }
     }
+    
 
     const handleonBlurMail = (e) => {
         console.log("entre a blurMail");
@@ -31,18 +42,20 @@ const [text, setText] = useState('Enter some text');
         console.log(value);
         if(!value){
             setMail("Enter your email");
-            alert(`Please enter a value`);
-        } else if (!validator.isEmail(mail)) {
-            alert(`Please enter a valid email`);
+            setAlert(`Please enter a mail`);
+        } else if (validator.isEmail(mail)) {
+            setAlert(``);
+        } else {
+            setAlert(`Please enter a valid email`);
         }
     }
 
     const cleanText = (e) => {
         console.log(`clean text name is: `+ e.target.name);
         console.log(`cleanText Value is: ` + e.target.value);
-        if (e.target.value == "Enter your name") { setName(" "); };
-        if (e.target.value == "Enter your email") { setMail(" "); };
-        if (e.target.value == "Enter some text") { setText(" "); };
+        if (e.target.value == "Enter your name") { setName(""); };
+        if (e.target.value == "Enter your email") { setMail(""); };
+        if (e.target.value == "Enter some text") { setText(""); };
     }
 
     function handleSubmit(e) {
@@ -58,6 +71,7 @@ const [text, setText] = useState('Enter some text');
 
 
     return (
+        <>
         <form method="post" onSubmit={handleSubmit}>
             <div className="mb-3">
                 <label htmlFor="formGroupExampleInput" className="form-label">Name</label>
@@ -72,6 +86,8 @@ const [text, setText] = useState('Enter some text');
                 <textarea style={{ height: "150px" }} className="form-control" name="users_text" value={text} id="text" onFocus={cleanText} onChange={handleInputChange} onBlur={handleonBlur} />
             </div>
             <input className="btn btn-primary mt-3 botoncito" type="submit"></input>
-        </form>
+            </form>
+            <h3>{alerta}</h3>
+        </>
     );
 }
