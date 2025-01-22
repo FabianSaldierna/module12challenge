@@ -8,6 +8,7 @@ https://netlifychallenge12fsm.netlify.app/
 ## Description
 
 This project solves the challenge for Module 12 with React and the 'bootstrap', 'validator', and 'vite' npm packages. 
+NOTE: on the Porfolio page, the deploy link for the "Weather Dashboard" project (top left project) can take a few minutes to load.
 
 ## Installation
 
