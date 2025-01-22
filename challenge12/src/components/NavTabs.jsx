@@ -7,10 +7,10 @@ function NavTabs() {
         <div className='container-fluid'>
             
             <div className="row">
-                <div class="col-6 ">
+                <div className="col-6 ">
                     <h1>Fabián</h1>
                 </div>
-                <div class="col-6 d-flex flex-row-reverse">
+                <div className="col-6 d-flex flex-row-reverse">
                     <ul className="nav nav-tabs mb-4">
                         <li className="nav-item">
                             <Link

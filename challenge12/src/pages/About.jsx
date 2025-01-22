@@ -1,4 +1,6 @@
-import Logos from '../components/Logos';
+import Footer from '../components/Footer';
+import picture from '../assets/img/picture.png';
+
 
 export default function About() {
     return (
@@ -18,7 +20,8 @@ export default function About() {
             <p>
                 I studied Electronic Systems Engineering. I live in Mexico City and I'm currently learning how to code web applications.
             </p>
-            <Logos />
+            <img src={picture} style={{ width: '303px', height: '239px' }} className='mb-2'/>
+            <Footer />
         </div>
     );
 }
